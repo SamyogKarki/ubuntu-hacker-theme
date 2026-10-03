@@ -1,0 +1,7 @@
+/* Live stats in the top bar; tabular digits keep the width steady as numbers change */
+.hacker-stats-label {
+  color: #00ff66;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-feature-settings: "tnum";
+  font-weight: 600;
+}

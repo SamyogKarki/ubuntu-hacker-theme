@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Hacker Green",
+  "version": "1.0",
+  "description": "Black and neon-green browser theme matching the desktop",
+  "theme": {
+    "colors": {
+      "frame": [0, 0, 0],
+      "frame_inactive": [5, 12, 5],
+      "frame_incognito": [0, 0, 0],
+      "toolbar": [8, 18, 10],
+      "tab_text": [0, 255, 102],
+      "tab_background_text": [60, 160, 90],
+      "tab_background_text_inactive": [40, 110, 60],
+      "bookmark_text": [0, 255, 102],
+      "toolbar_text": [0, 255, 102],
+      "toolbar_button_icon": [0, 255, 102],
+      "omnibox_background": [0, 0, 0],
+      "omnibox_text": [0, 255, 102],
+      "ntp_background": [0, 0, 0],
+      "ntp_text": [0, 255, 102],
+      "ntp_link": [102, 255, 153],
+      "button_background": [0, 0, 0, 0]
+    }
+  }
+}

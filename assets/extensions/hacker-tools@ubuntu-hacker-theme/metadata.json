@@ -1,0 +1,8 @@
+{
+  "uuid": "hacker-tools@ubuntu-hacker-theme",
+  "name": "Hacker Tools",
+  "description": "Live CPU/RAM/network/Tailscale readout in the top bar and an F12 drop-down terminal.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.hacker-tools",
+  "version": 1
+}

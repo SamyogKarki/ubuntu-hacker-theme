@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.hacker-tools" path="/org/gnome/shell/extensions/hacker-tools/">
+    <key name="dropdown-terminal" type="as">
+      <default>['F12']</default>
+      <summary>Shortcut that shows or hides the drop-down terminal</summary>
+    </key>
+    <key name="dropdown-height" type="d">
+      <default>0.45</default>
+      <summary>Drop-down terminal height as a fraction of the screen</summary>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,35 @@
+#!/bin/bash
+# Shows full-screen cmatrix after 3 minutes without keyboard/mouse input.
+# Skips when something blocks idle (video playing, presentation) or the screen is locked,
+# and closes the rain as soon as you touch the mouse or keyboard.
+START_AFTER_MS=180000
+TAG=hacker-matrix-saver
+
+idle_ms() {
+  gdbus call --session --dest org.gnome.Mutter.IdleMonitor \
+    --object-path /org/gnome/Mutter/IdleMonitor/Core \
+    --method org.gnome.Mutter.IdleMonitor.GetIdletime 2>/dev/null | grep -oE '[0-9]+' | tail -1
+}
+idle_inhibited() {
+  gdbus call --session --dest org.gnome.SessionManager --object-path /org/gnome/SessionManager \
+    --method org.gnome.SessionManager.IsInhibited 8 2>/dev/null | grep -q true
+}
+locked() {
+  gdbus call --session --dest org.gnome.ScreenSaver --object-path /org/gnome/ScreenSaver \
+    --method org.gnome.ScreenSaver.GetActive 2>/dev/null | grep -q true
+}
+# match only the cmatrix process (its argv[0] is the tag), never the ptyxis window that launched it
+running() { pgrep -f "^$TAG " >/dev/null; }
+
+while sleep 10; do
+  idle=$(idle_ms); [ -z "$idle" ] && continue
+  if [ "$idle" -ge "$START_AFTER_MS" ] && ! running && ! idle_inhibited && ! locked; then
+    ptyxis --new-window --fullscreen -x "bash -c 'exec -a $TAG cmatrix -s -b -u 5 -C green'" >/dev/null 2>&1 &
+    # watch closely while it runs; any input (idle resets) or locking closes it
+    while sleep 1; do
+      running || break
+      idle=$(idle_ms)
+      if [ "${idle:-0}" -lt 1500 ] || locked; then pkill -f "^$TAG "; break; fi
+    done
+  fi
+done

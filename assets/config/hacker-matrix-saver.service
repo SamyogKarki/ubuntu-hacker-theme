@@ -1,0 +1,11 @@
+[Unit]
+Description=Matrix rain screen saver after idle
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/hacker-matrix-saver
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

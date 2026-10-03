@@ -1,0 +1,108 @@
+/* Top bar: black with neon-green text and a glowing bottom edge */
+#panel {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #00ff66;
+  box-shadow: 0 1px 8px rgba(0, 255, 102, 0.45);
+  font-family: "IBM Plex Sans", "Ubuntu Sans", sans-serif;
+  font-weight: 600;
+}
+#panel .panel-button {
+  color: #00ff66 !important;
+}
+#panel .panel-button:hover,
+#panel .panel-button:focus,
+#panel .panel-button:active,
+#panel .panel-button:checked {
+  background-color: rgba(0, 255, 102, 0.18) !important;
+  color: #b8ffc8 !important;
+  box-shadow: inset 0 0 0 1px #00ff66;
+}
+#panel .panel-button .system-status-icon,
+#panel .panel-button StIcon {
+  color: #00ff66 !important;
+}
+#panel .clock-display .clock {
+  color: #00ff66 !important;
+}
+/* Workspace indicator dots */
+#panel .workspace-dot {
+  background-color: #00ff66 !important;
+}
+/* Dropdown menus / quick settings */
+.popup-menu-content,
+.quick-settings {
+  background-color: #050a05 !important;
+  border: 1px solid #00ff66;
+  color: #b8ffc8;
+}
+.popup-menu-item:hover, .popup-menu-item:focus {
+  background-color: rgba(0, 255, 102, 0.18) !important;
+  color: #00ff66;
+}
+
+/* Dock (taskbar): green glowing edge, green hover */
+#dashtodockContainer #dash {
+  border: 1px solid #00ff66;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.45);
+}
+#dashtodockContainer .dash-item-container .app-well-app:hover .overview-icon,
+#dashtodockContainer .show-apps:hover .overview-icon {
+  background-color: rgba(0, 255, 102, 0.18) !important;
+}
+#dashtodockContainer .app-well-app:focus .overview-icon {
+  box-shadow: inset 0 0 0 1px #00ff66;
+}
+.dash-label {
+  background-color: #000000;
+  color: #00ff66;
+  border: 1px solid #00ff66;
+  font-family: "IBM Plex Sans", "Ubuntu Sans", sans-serif;
+}
+
+/* Notifications: pop-up banners and the list under the clock */
+.message {
+  background-color: rgba(0, 8, 2, 0.95) !important;
+  border: 1px solid #00ff66;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.35);
+  color: #b8ffc8;
+}
+.message:hover {
+  background-color: rgba(0, 40, 14, 0.95) !important;
+}
+.message:second-in-stack, .message:lower-in-stack {
+  background-color: rgba(0, 20, 6, 0.95) !important;
+  border-color: #1f5f33;
+}
+.message .message-header .message-header-content .message-source-title,
+.message .message-header .message-header-content .event-time {
+  color: #00cc55 !important;
+}
+.message .message-box .message-content .message-title {
+  color: #00ff66 !important;
+  font-weight: bold;
+}
+.message .message-box .message-content {
+  color: #b8ffc8;
+}
+.message .message-header .message-close-button,
+.message .message-header .message-expand-button,
+.message-notification-group .message-collapse-button {
+  background-color: rgba(0, 255, 102, 0.12) !important;
+  color: #00ff66 !important;
+}
+.message .message-header .message-close-button:hover,
+.message .message-header .message-expand-button:hover {
+  background-color: rgba(0, 255, 102, 0.3) !important;
+}
+.notification-button, .message .message-action-bin .button {
+  background-color: #000000 !important;
+  color: #00ff66 !important;
+  border: 1px solid #00ff66;
+}
+.notification-button:hover, .message .message-action-bin .button:hover {
+  background-color: rgba(0, 255, 102, 0.25) !important;
+}
+.message-list-controls .button {
+  color: #00ff66 !important;
+  border: 1px solid #00ff66;
+}

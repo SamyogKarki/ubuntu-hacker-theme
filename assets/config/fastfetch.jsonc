@@ -1,0 +1,22 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/hacker-banner.txt",
+    "color": { "1": "green" },
+    "padding": { "top": 1, "right": 3 }
+  },
+  "display": {
+    "separator": "  ",
+    "color": { "keys": "green", "title": "light_green" }
+  },
+  "modules": [
+    "title",
+    { "type": "os", "key": "[os]   " },
+    { "type": "kernel", "key": "[kern] " },
+    { "type": "uptime", "key": "[up]   " },
+    { "type": "cpu", "key": "[cpu]  " },
+    { "type": "memory", "key": "[ram]  " },
+    { "type": "disk", "key": "[disk] ", "folders": "/" },
+    { "type": "localip", "key": "[ip]   " }
+  ]
+}

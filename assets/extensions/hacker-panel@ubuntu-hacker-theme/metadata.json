@@ -1,0 +1,9 @@
+{
+  "uuid": "hacker-panel@ubuntu-hacker-theme",
+  "name": "Hacker Panel",
+  "description": "Black and neon-green top bar, dock and notification styling.",
+  "shell-version": [
+    "50"
+  ],
+  "version": 1
+}

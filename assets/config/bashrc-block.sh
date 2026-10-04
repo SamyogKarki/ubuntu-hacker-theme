@@ -51,7 +51,7 @@ alias ll='eza -lah --group-directories-first --git'
 alias tree='eza --tree --group-directories-first'
 alias top='btop'
 # Brave theme (only defined when the installer found Brave)
-[[ -d $HOME/.local/share/ubuntu-hacker-theme/brave-theme ]] && alias brave='brave --load-extension=$HOME/.local/share/ubuntu-hacker-theme/brave-theme'
+[[ -f $HOME/brave-hacker-theme/manifest.json ]] && alias brave='brave --load-extension=$HOME/brave-hacker-theme'
 # type text out one character at a time
 __hk_type() {
   local i

@@ -51,6 +51,11 @@ if [[ -f $CREATED ]]; then
     fi
   done < "$CREATED"
 fi
+# Brave writes "Cached Theme.pak" next to the theme; remove it and the folder only if nothing else is in it
+if [[ ! -e $HOME/brave-hacker-theme/manifest.json ]]; then
+  rm -f "$HOME/brave-hacker-theme/Cached Theme.pak"
+  rmdir "$HOME/brave-hacker-theme" 2>/dev/null
+fi
 rm -rf "$HOME/.local/share/icons/Papirus-Hacker" "$HOME/.local/share/icons/Hacker-Cursor" "$HOME/.local/share/sounds/hacker"
 systemctl --user daemon-reload >/dev/null 2>&1
 update-desktop-database "$HOME/.local/share/applications" >/dev/null 2>&1

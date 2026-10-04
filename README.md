@@ -85,7 +85,8 @@ Everything happens inside your home folder, as your own user:
   (stats and drop-down terminal), in `~/.local/share/gnome-shell/extensions/`.
 - **Config files:** fastfetch, btop and terminal-palette config files, a user service for the screen saver, an
   autostart entry for the login sound, and launcher copies for Brave and a few snap apps so they
-  use green icons. Any existing file it replaces is backed up first.
+  use green icons. If Brave is installed, its theme goes in `~/brave-hacker-theme` (Snap Brave
+  can't read hidden folders). Any existing file it replaces is backed up first.
 - **`~/.bashrc`:** a block between `# >>> hacker-theme >>>` and `# <<< hacker-theme <<<`.
 
 It does **not** change the login screen, boot screen, lock screen or any system files.

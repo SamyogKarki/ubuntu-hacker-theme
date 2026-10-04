@@ -273,12 +273,13 @@ install_brave() {
   done
   [[ -f $src ]] || return 0
   step "Brave browser: black and green theme"
-  mkdir -p "$DATA/brave-theme"
-  cp "$HERE/assets/config/brave-theme-manifest.json" "$DATA/brave-theme/manifest.json"
+  # Snap Brave can only read non-hidden folders in your home, so the theme can't live under ~/.local
+  local theme="$HOME/brave-hacker-theme"
+  place "$HERE/assets/config/brave-theme-manifest.json" "$theme/manifest.json"
   local name
   name=$(basename "$src")
   # Brave only allows a local theme through this start-up option, so its launcher passes it every time
-  sed -e "s|^\(Exec=[^ ]*\)|\1 --load-extension=$DATA/brave-theme|" -e 's|^Icon=.*|Icon=brave-browser|' "$src" > "$DATA/$name"
+  sed -e "s|^\(Exec=[^ ]*\)|\1 --load-extension=$theme|" -e 's|^Icon=.*|Icon=brave-browser|' "$src" > "$DATA/$name"
   place "$DATA/$name" "$HOME/.local/share/applications/$name"
   note "Restart Brave from the dock or app grid to see it."
 }
